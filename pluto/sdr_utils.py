@@ -157,4 +157,17 @@ phase_detector_2 = np.vectorize(phase_detector_2)
 def simple_ecode_recv(samples):
     b_msg = (samples > 0).astype(int)
     return b_msg
-    
+
+def plot_IQ(plt, IQ_data, title="No Title"):
+    tc = np.arange(0,2*np.pi,1e-2)
+    plt.plot(np.cos(tc), np.sin(tc), linewidth=1, color="grey")
+    plt.plot(np.real(IQ_data), np.imag(IQ_data), '.', color="red")
+    plt.title(title)
+    plt.grid(True)
+    plt.show()
+
+def plot_IQ_samples(plt, IQ_data, title="No Title"):
+    plt.plot(np.real(IQ_data), '.-', zorder = 1)
+    plt.plot(np.imag(IQ_data), '.-', zorder = 2)
+    plt.legend(["I", "Q"])
+    plt.show()
