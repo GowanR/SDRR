@@ -11,7 +11,6 @@ import os
 
 class PowerRadar():
     def __init__(self):
-
         ## SDR Setup
         self.sample_rate = 2e6 # Hz
         center_freq = 2e9 # Hz
